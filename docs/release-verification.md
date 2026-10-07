@@ -6,7 +6,7 @@ This report records checks performed on the isolated public candidate on 2026-10
 
 - Private source commit: `2839d6a7d3c234d3d022f86661a2ff0d85f9a345`.
 - Export method: Git tracked-only archive with an explicit public allowlist; the private `.git` directory was not copied.
-- Candidate repository: independent local `main`, GitHub noreply identity, no remote, no push and no public publication.
+- Candidate repository: independent `main` with GitHub noreply identity, published at <https://github.com/wuhaotian2026-svg/enterprise-ai-workbench> after a private-first remote verification.
 - License: no open-source license is granted in this candidate.
 - Runtime isolation: Docker Compose project `enterprise_ai_workbench_public_candidate`, local port `18081`, dedicated network/database/uploads volumes and database `enterprise_ai_workbench_public_candidate`.
 - Provider isolation: the candidate stack used `https://example.invalid/v1`; no real DeepSeek request or production credential was used.
@@ -20,6 +20,7 @@ This report records checks performed on the isolated public candidate on 2026-10
 - Gitleaks 8.30.1 was installed from the official GitHub Release, and its archive SHA-256 was verified against the official checksums file.
 - An early scan reported three generic-key findings. Structural review confirmed they were pinned SHA-256 values for tokenizer artifacts rather than credentials. `.gitleaks.toml` contains a narrow path-and-line-pattern allowlist for those three checksums only.
 - Final fresh Gitleaks result: **0 findings** across approximately 12.58 MB scanned.
+- GitHub Secret Scanning and Push Protection are enabled. Dependabot Security Updates are enabled; the first post-publication checks reported zero secret-scanning and Dependabot alerts.
 - Fresh `npm audit` initially found one high-severity advisory in transitive `source-map-js` 1.2.1. A narrow lockfile update moved only that transitive package to 1.2.2; no force fix or unrelated major upgrade was used. The final audit reported zero known vulnerabilities.
 - Local Markdown validation found zero broken local links.
 
@@ -57,6 +58,16 @@ The ProductEvent fix makes the event module allowlist reuse the authoritative wo
 - `scripts/verify_compose.ps1` passed against `http://127.0.0.1:18081`.
 - The built-in seed created 118 fictional records. A procurement request was submitted through the real deterministic form and confirmation flow, and appeared in the fictional manager's approval queue.
 - Five representative screenshots were captured and visually inspected: knowledge assistant, HR assistant, procurement assistant, approval center and organization administration. They expose no password, cookie, token, real person or production record.
+
+## GitHub publication verification
+
+- The repository was created as Private, and `main` was pushed without force. The remote commit matched local commit `ce1ddcbdebb093ac1ad007319940e32fcf55c2f4`, with ahead/behind `0/0`, before visibility changed.
+- The default branch is `main`; the repository description, online Demo homepage and eleven technical topics are configured.
+- Visibility was changed to Public only after the private-stage checks passed.
+- An unauthenticated request to the repository page returned HTTP 200 and contained the project title.
+- Unauthenticated raw requests for the README and all five screenshots returned HTTP 200. The remote README SHA-256 matched the local file exactly.
+- The unauthenticated GitHub API reported `visibility=public`, `private=false` and `default_branch=main`.
+- No open-source license was added, and no production host, database, model provider or secret was changed as part of publication.
 
 ## Scope limits and known debt
 
