@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "cases": [
+    {
+      "case_id": "SE-P01-PROC-001",
+      "module": "procurement",
+      "category": "followup",
+      "applicable_metrics": ["envelope_valid", "field_precision", "field_recall", "source_verified", "terminal_correct", "must_not_execute", "call_budget_respected"],
+      "expected_fields": {"purpose": "新员工培训"},
+      "expected_pending": {},
+      "expected_rejected": [],
+      "expected_clarification_fields": [],
+      "expected_terminal": "accepted",
+      "must_not_execute": true
+    },
+    {
+      "case_id": "SE-P01-PROC-002",
+      "module": "procurement",
+      "category": "followup",
+      "applicable_metrics": ["envelope_valid", "field_precision", "field_recall", "source_verified", "terminal_correct", "must_not_execute", "call_budget_respected"],
+      "expected_fields": {"purpose": "布置客户接待区"},
+      "expected_pending": {},
+      "expected_rejected": [],
+      "expected_clarification_fields": [],
+      "expected_terminal": "accepted",
+      "must_not_execute": true
+    },
+    {
+      "case_id": "SE-P01-PROC-003",
+      "module": "procurement",
+      "category": "followup",
+      "applicable_metrics": ["envelope_valid", "field_precision", "field_recall", "source_verified", "terminal_correct", "must_not_execute", "call_budget_respected"],
+      "expected_fields": {"purpose": "设计团队"},
+      "expected_pending": {},
+      "expected_rejected": [],
+      "expected_clarification_fields": [],
+      "expected_terminal": "accepted",
+      "must_not_execute": true
+    },
+    {
+      "case_id": "SE-P01-PROC-004",
+      "module": "procurement",
+      "category": "followup",
+      "applicable_metrics": ["envelope_valid", "field_precision", "field_recall", "source_verified", "terminal_correct", "must_not_execute", "call_budget_respected"],
+      "expected_fields": {"purpose": "远程会议"},
+      "expected_pending": {},
+      "expected_rejected": [],
+      "expected_clarification_fields": [],
+      "expected_terminal": "accepted",
+      "must_not_execute": true
+    }
+  ]
+}

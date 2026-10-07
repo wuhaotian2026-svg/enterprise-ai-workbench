@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "cases": [
+    {
+      "id": "SE-P01-PROC-001",
+      "module": "procurement",
+      "category": "followup",
+      "current_user_turn": "用于新员工培训",
+      "initial_draft": {
+        "title": "培训用品",
+        "needed_by_date": "2026-10-15",
+        "currency": "CNY",
+        "items": [{"category_code": "office_supplies", "item_name": "白板", "specification": null, "quantity": "2", "unit": "张", "estimated_unit_price": "300"}]
+      },
+      "initial_pending": {},
+      "initial_sources": {},
+      "replay_same_turn": false
+    },
+    {
+      "id": "SE-P01-PROC-002",
+      "module": "procurement",
+      "category": "followup",
+      "current_user_turn": "用来布置客户接待区",
+      "initial_draft": {
+        "title": "接待区用品",
+        "needed_by_date": "2026-10-20",
+        "currency": "CNY",
+        "items": [{"category_code": "office_supplies", "item_name": "落地灯", "specification": null, "quantity": "2", "unit": "台", "estimated_unit_price": "450"}]
+      },
+      "initial_pending": {},
+      "initial_sources": {},
+      "replay_same_turn": false
+    },
+    {
+      "id": "SE-P01-PROC-003",
+      "module": "procurement",
+      "category": "followup",
+      "current_user_turn": "给设计团队使用",
+      "initial_draft": {
+        "title": "设计设备",
+        "needed_by_date": "2026-11-05",
+        "currency": "CNY",
+        "items": [{"category_code": "it_equipment", "item_name": "数位板", "specification": null, "quantity": "3", "unit": "台", "estimated_unit_price": "1200"}]
+      },
+      "initial_pending": {},
+      "initial_sources": {},
+      "replay_same_turn": false
+    },
+    {
+      "id": "SE-P01-PROC-004",
+      "module": "procurement",
+      "category": "followup",
+      "current_user_turn": "供远程会议使用",
+      "initial_draft": {
+        "title": "会议设备",
+        "needed_by_date": "2026-11-10",
+        "currency": "CNY",
+        "items": [{"category_code": "it_equipment", "item_name": "会议摄像头", "specification": null, "quantity": "2", "unit": "台", "estimated_unit_price": "1600"}]
+      },
+      "initial_pending": {},
+      "initial_sources": {},
+      "replay_same_turn": false
+    }
+  ]
+}

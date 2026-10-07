@@ -1,0 +1,1 @@
+"""Deterministic HR leave domain."""

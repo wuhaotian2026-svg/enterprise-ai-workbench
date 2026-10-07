@@ -1,0 +1,1640 @@
+{
+  "schema_version": 1,
+  "cases": [
+    {
+      "case_id": "SE-HR-001",
+      "module": "hr",
+      "category": "natural_multifield",
+      "applicable_metrics": [
+        "envelope_valid",
+        "field_precision",
+        "field_recall",
+        "source_verified",
+        "terminal_correct",
+        "must_not_execute",
+        "call_budget_respected",
+        "clarification_correct",
+        "ambiguity_handled"
+      ],
+      "expected_fields": {
+        "leave_type_code": "annual",
+        "reason": "探亲"
+      },
+      "expected_pending": {
+        "date_range": "date_year_required"
+      },
+      "expected_rejected": [],
+      "expected_clarification_fields": [
+        "year"
+      ],
+      "expected_terminal": "clarification",
+      "must_not_execute": true
+    },
+    {
+      "case_id": "SE-HR-002",
+      "module": "hr",
+      "category": "natural_multifield",
+      "applicable_metrics": [
+        "envelope_valid",
+        "field_precision",
+        "field_recall",
+        "source_verified",
+        "terminal_correct",
+        "must_not_execute",
+        "call_budget_respected"
+      ],
+      "expected_fields": {
+        "leave_type_code": "compensatory",
+        "date_range": {
+          "start_date": "2026-09-10",
+          "end_date": "2026-09-12"
+        },
+        "reason": "搬家"
+      },
+      "expected_pending": {},
+      "expected_rejected": [],
+      "expected_clarification_fields": [],
+      "expected_terminal": "accepted",
+      "must_not_execute": true
+    },
+    {
+      "case_id": "SE-HR-003",
+      "module": "hr",
+      "category": "natural_multifield",
+      "applicable_metrics": [
+        "envelope_valid",
+        "field_precision",
+        "field_recall",
+        "source_verified",
+        "terminal_correct",
+        "must_not_execute",
+        "call_budget_respected"
+      ],
+      "expected_fields": {
+        "leave_type_code": "annual",
+        "date_range": {
+          "start_date": "2026-10-08",
+          "end_date": "2026-10-09"
+        },
+        "reason": "年度体检"
+      },
+      "expected_pending": {},
+      "expected_rejected": [],
+      "expected_clarification_fields": [],
+      "expected_terminal": "accepted",
+      "must_not_execute": true
+    },
+    {
+      "case_id": "SE-HR-004",
+      "module": "hr",
+      "category": "natural_multifield",
+      "applicable_metrics": [
+        "envelope_valid",
+        "field_precision",
+        "field_recall",
+        "source_verified",
+        "terminal_correct",
+        "must_not_execute",
+        "call_budget_respected"
+      ],
+      "expected_fields": {
+        "leave_type_code": "compensatory",
+        "start_date": "2026-11-02",
+        "end_date": "2026-11-03",
+        "reason": "家庭事务"
+      },
+      "expected_pending": {},
+      "expected_rejected": [],
+      "expected_clarification_fields": [],
+      "expected_terminal": "accepted",
+      "must_not_execute": true
+    },
+    {
+      "case_id": "SE-HR-005",
+      "module": "hr",
+      "category": "natural_multifield",
+      "applicable_metrics": [
+        "envelope_valid",
+        "field_precision",
+        "field_recall",
+        "source_verified",
+        "terminal_correct",
+        "must_not_execute",
+        "call_budget_respected"
+      ],
+      "expected_fields": {
+        "leave_type_code": "annual",
+        "date_range": {
+          "start_date": "2026-12-01",
+          "end_date": "2026-12-04"
+        },
+        "reason": "探望家人"
+      },
+      "expected_pending": {},
+      "expected_rejected": [],
+      "expected_clarification_fields": [],
+      "expected_terminal": "accepted",
+      "must_not_execute": true
+    },
+    {
+      "case_id": "SE-HR-006",
+      "module": "hr",
+      "category": "natural_multifield",
+      "applicable_metrics": [
+        "envelope_valid",
+        "field_precision",
+        "field_recall",
+        "source_verified",
+        "terminal_correct",
+        "must_not_execute",
+        "call_budget_respected"
+      ],
+      "expected_fields": {
+        "request_id": "11111111-1111-4111-8111-111111111111"
+      },
+      "expected_pending": {},
+      "expected_rejected": [],
+      "expected_clarification_fields": [],
+      "expected_terminal": "accepted",
+      "must_not_execute": true
+    },
+    {
+      "case_id": "SE-HR-007",
+      "module": "hr",
+      "category": "natural_multifield",
+      "applicable_metrics": [
+        "envelope_valid",
+        "field_precision",
+        "field_recall",
+        "source_verified",
+        "terminal_correct",
+        "must_not_execute",
+        "call_budget_respected"
+      ],
+      "expected_fields": {
+        "leave_type_code": "annual",
+        "start_date": "2026-09-21",
+        "end_date": "2026-09-22",
+        "reason": "培训"
+      },
+      "expected_pending": {},
+      "expected_rejected": [],
+      "expected_clarification_fields": [],
+      "expected_terminal": "accepted",
+      "must_not_execute": true
+    },
+    {
+      "case_id": "SE-HR-008",
+      "module": "hr",
+      "category": "natural_multifield",
+      "applicable_metrics": [
+        "envelope_valid",
+        "field_precision",
+        "field_recall",
+        "source_verified",
+        "terminal_correct",
+        "must_not_execute",
+        "call_budget_respected"
+      ],
+      "expected_fields": {
+        "leave_type_code": "compensatory",
+        "date_range": {
+          "start_date": "2026-10-15",
+          "end_date": "2026-10-16"
+        },
+        "reason": "处理搬迁"
+      },
+      "expected_pending": {},
+      "expected_rejected": [],
+      "expected_clarification_fields": [],
+      "expected_terminal": "accepted",
+      "must_not_execute": true
+    },
+    {
+      "case_id": "SE-HR-009",
+      "module": "hr",
+      "category": "natural_multifield",
+      "applicable_metrics": [
+        "envelope_valid",
+        "field_precision",
+        "field_recall",
+        "source_verified",
+        "terminal_correct",
+        "must_not_execute",
+        "call_budget_respected"
+      ],
+      "expected_fields": {
+        "leave_type_code": "compensatory",
+        "date_range": {
+          "start_date": "2026-11-09",
+          "end_date": "2026-11-10"
+        },
+        "reason": "陪同就医"
+      },
+      "expected_pending": {},
+      "expected_rejected": [],
+      "expected_clarification_fields": [],
+      "expected_terminal": "accepted",
+      "must_not_execute": true
+    },
+    {
+      "case_id": "SE-HR-010",
+      "module": "hr",
+      "category": "natural_multifield",
+      "applicable_metrics": [
+        "envelope_valid",
+        "field_precision",
+        "field_recall",
+        "source_verified",
+        "terminal_correct",
+        "must_not_execute",
+        "call_budget_respected"
+      ],
+      "expected_fields": {
+        "leave_type_code": "annual",
+        "start_date": "2026-09-28",
+        "end_date": "2026-09-30",
+        "reason": "探亲"
+      },
+      "expected_pending": {},
+      "expected_rejected": [],
+      "expected_clarification_fields": [],
+      "expected_terminal": "accepted",
+      "must_not_execute": true
+    },
+    {
+      "case_id": "SE-HR-011",
+      "module": "hr",
+      "category": "followup",
+      "applicable_metrics": [
+        "envelope_valid",
+        "field_precision",
+        "field_recall",
+        "source_verified",
+        "terminal_correct",
+        "must_not_execute",
+        "call_budget_respected"
+      ],
+      "expected_fields": {
+        "year": "2026",
+        "reason": "探亲"
+      },
+      "expected_pending": {},
+      "expected_rejected": [],
+      "expected_clarification_fields": [],
+      "expected_terminal": "accepted",
+      "must_not_execute": true
+    },
+    {
+      "case_id": "SE-HR-012",
+      "module": "hr",
+      "category": "followup",
+      "applicable_metrics": [
+        "envelope_valid",
+        "field_precision",
+        "field_recall",
+        "source_verified",
+        "terminal_correct",
+        "must_not_execute",
+        "call_budget_respected",
+        "clarification_correct"
+      ],
+      "expected_fields": {
+        "year": "2027"
+      },
+      "expected_pending": {},
+      "expected_rejected": [],
+      "expected_clarification_fields": [
+        "start_date",
+        "end_date"
+      ],
+      "expected_terminal": "clarification",
+      "must_not_execute": true
+    },
+    {
+      "case_id": "SE-HR-013",
+      "module": "hr",
+      "category": "followup",
+      "applicable_metrics": [
+        "envelope_valid",
+        "field_precision",
+        "field_recall",
+        "source_verified",
+        "terminal_correct",
+        "must_not_execute",
+        "call_budget_respected"
+      ],
+      "expected_fields": {
+        "reason": "年度体检"
+      },
+      "expected_pending": {},
+      "expected_rejected": [],
+      "expected_clarification_fields": [],
+      "expected_terminal": "accepted",
+      "must_not_execute": true
+    },
+    {
+      "case_id": "SE-HR-014",
+      "module": "hr",
+      "category": "followup",
+      "applicable_metrics": [
+        "envelope_valid",
+        "field_precision",
+        "field_recall",
+        "source_verified",
+        "terminal_correct",
+        "must_not_execute",
+        "call_budget_respected"
+      ],
+      "expected_fields": {
+        "leave_type_code": "compensatory"
+      },
+      "expected_pending": {},
+      "expected_rejected": [],
+      "expected_clarification_fields": [],
+      "expected_terminal": "accepted",
+      "must_not_execute": true
+    },
+    {
+      "case_id": "SE-HR-015",
+      "module": "hr",
+      "category": "followup",
+      "applicable_metrics": [
+        "envelope_valid",
+        "field_precision",
+        "field_recall",
+        "source_verified",
+        "terminal_correct",
+        "must_not_execute",
+        "call_budget_respected"
+      ],
+      "expected_fields": {
+        "request_id": "22222222-2222-4222-8222-222222222222"
+      },
+      "expected_pending": {},
+      "expected_rejected": [],
+      "expected_clarification_fields": [],
+      "expected_terminal": "accepted",
+      "must_not_execute": true
+    },
+    {
+      "case_id": "SE-HR-016",
+      "module": "hr",
+      "category": "ambiguity",
+      "applicable_metrics": [
+        "envelope_valid",
+        "field_precision",
+        "field_recall",
+        "source_verified",
+        "terminal_correct",
+        "must_not_execute",
+        "call_budget_respected",
+        "clarification_correct",
+        "ambiguity_handled"
+      ],
+      "expected_fields": {},
+      "expected_pending": {
+        "start_date": "date_ambiguous"
+      },
+      "expected_rejected": [],
+      "expected_clarification_fields": [
+        "start_date"
+      ],
+      "expected_terminal": "clarification",
+      "must_not_execute": true
+    },
+    {
+      "case_id": "SE-HR-017",
+      "module": "hr",
+      "category": "ambiguity",
+      "applicable_metrics": [
+        "envelope_valid",
+        "field_precision",
+        "field_recall",
+        "source_verified",
+        "terminal_correct",
+        "must_not_execute",
+        "call_budget_respected",
+        "clarification_correct",
+        "ambiguity_handled"
+      ],
+      "expected_fields": {},
+      "expected_pending": {
+        "start_date": "date_year_required"
+      },
+      "expected_rejected": [],
+      "expected_clarification_fields": [
+        "year"
+      ],
+      "expected_terminal": "clarification",
+      "must_not_execute": true
+    },
+    {
+      "case_id": "SE-HR-018",
+      "module": "hr",
+      "category": "ambiguity",
+      "applicable_metrics": [
+        "envelope_valid",
+        "field_precision",
+        "field_recall",
+        "source_verified",
+        "terminal_correct",
+        "must_not_execute",
+        "call_budget_respected",
+        "clarification_correct",
+        "ambiguity_handled"
+      ],
+      "expected_fields": {},
+      "expected_pending": {
+        "leave_type_code": "slot_value_ambiguous"
+      },
+      "expected_rejected": [],
+      "expected_clarification_fields": [
+        "leave_type_code"
+      ],
+      "expected_terminal": "clarification",
+      "must_not_execute": true
+    },
+    {
+      "case_id": "SE-HR-019",
+      "module": "hr",
+      "category": "ambiguity",
+      "applicable_metrics": [
+        "envelope_valid",
+        "field_precision",
+        "field_recall",
+        "source_verified",
+        "terminal_correct",
+        "must_not_execute",
+        "call_budget_respected",
+        "clarification_correct",
+        "ambiguity_handled"
+      ],
+      "expected_fields": {},
+      "expected_pending": {
+        "start_date": "slot_value_ambiguous"
+      },
+      "expected_rejected": [],
+      "expected_clarification_fields": [
+        "start_date"
+      ],
+      "expected_terminal": "clarification",
+      "must_not_execute": true
+    },
+    {
+      "case_id": "SE-HR-020",
+      "module": "hr",
+      "category": "conflict",
+      "applicable_metrics": [
+        "envelope_valid",
+        "field_precision",
+        "field_recall",
+        "source_verified",
+        "terminal_correct",
+        "must_not_execute",
+        "call_budget_respected",
+        "clarification_correct",
+        "ambiguity_handled"
+      ],
+      "expected_fields": {
+        "leave_type_code": "compensatory"
+      },
+      "expected_pending": {
+        "leave_type_code": "draft_value_conflict"
+      },
+      "expected_rejected": [],
+      "expected_clarification_fields": [
+        "leave_type_code"
+      ],
+      "expected_terminal": "clarification",
+      "must_not_execute": true
+    },
+    {
+      "case_id": "SE-HR-021",
+      "module": "hr",
+      "category": "conflict",
+      "applicable_metrics": [
+        "envelope_valid",
+        "field_precision",
+        "field_recall",
+        "source_verified",
+        "terminal_correct",
+        "must_not_execute",
+        "call_budget_respected",
+        "clarification_correct",
+        "ambiguity_handled"
+      ],
+      "expected_fields": {
+        "reason": "探亲"
+      },
+      "expected_pending": {
+        "reason": "draft_value_conflict"
+      },
+      "expected_rejected": [],
+      "expected_clarification_fields": [
+        "reason"
+      ],
+      "expected_terminal": "clarification",
+      "must_not_execute": true
+    },
+    {
+      "case_id": "SE-HR-022",
+      "module": "hr",
+      "category": "conflict",
+      "applicable_metrics": [
+        "envelope_valid",
+        "field_precision",
+        "field_recall",
+        "source_verified",
+        "terminal_correct",
+        "must_not_execute",
+        "call_budget_respected",
+        "clarification_correct",
+        "ambiguity_handled"
+      ],
+      "expected_fields": {
+        "start_date": "2026-09-02"
+      },
+      "expected_pending": {
+        "start_date": "draft_value_conflict"
+      },
+      "expected_rejected": [],
+      "expected_clarification_fields": [
+        "start_date"
+      ],
+      "expected_terminal": "clarification",
+      "must_not_execute": true
+    },
+    {
+      "case_id": "SE-HR-023",
+      "module": "hr",
+      "category": "conflict",
+      "applicable_metrics": [
+        "envelope_valid",
+        "field_precision",
+        "field_recall",
+        "source_verified",
+        "terminal_correct",
+        "must_not_execute",
+        "call_budget_respected",
+        "clarification_correct",
+        "ambiguity_handled"
+      ],
+      "expected_fields": {
+        "request_id": "33333333-3333-4333-8333-333333333333"
+      },
+      "expected_pending": {
+        "request_id": "draft_value_conflict"
+      },
+      "expected_rejected": [],
+      "expected_clarification_fields": [
+        "request_id"
+      ],
+      "expected_terminal": "clarification",
+      "must_not_execute": true
+    },
+    {
+      "case_id": "SE-HR-024",
+      "module": "hr",
+      "category": "invalid",
+      "applicable_metrics": [
+        "envelope_valid",
+        "field_precision",
+        "field_recall",
+        "source_verified",
+        "terminal_correct",
+        "must_not_execute",
+        "call_budget_respected",
+        "clarification_correct"
+      ],
+      "expected_fields": {},
+      "expected_pending": {},
+      "expected_rejected": [
+        {
+          "slot_name": "start_date",
+          "reason_code": "date_invalid"
+        }
+      ],
+      "expected_clarification_fields": [
+        "start_date"
+      ],
+      "expected_terminal": "clarification",
+      "must_not_execute": true
+    },
+    {
+      "case_id": "SE-HR-025",
+      "module": "hr",
+      "category": "invalid",
+      "applicable_metrics": [
+        "envelope_valid",
+        "field_precision",
+        "field_recall",
+        "source_verified",
+        "terminal_correct",
+        "must_not_execute",
+        "call_budget_respected",
+        "clarification_correct"
+      ],
+      "expected_fields": {},
+      "expected_pending": {},
+      "expected_rejected": [
+        {
+          "slot_name": "leave_type_code",
+          "reason_code": "leave_type_invalid"
+        }
+      ],
+      "expected_clarification_fields": [
+        "leave_type_code"
+      ],
+      "expected_terminal": "clarification",
+      "must_not_execute": true
+    },
+    {
+      "case_id": "SE-HR-026",
+      "module": "hr",
+      "category": "invalid",
+      "applicable_metrics": [
+        "envelope_valid",
+        "field_precision",
+        "field_recall",
+        "source_verified",
+        "terminal_correct",
+        "must_not_execute",
+        "call_budget_respected"
+      ],
+      "expected_fields": {},
+      "expected_pending": {},
+      "expected_rejected": [
+        {
+          "slot_name": "year",
+          "reason_code": "year_out_of_range"
+        }
+      ],
+      "expected_clarification_fields": [],
+      "expected_terminal": "rejected",
+      "must_not_execute": true
+    },
+    {
+      "case_id": "SE-HR-027",
+      "module": "hr",
+      "category": "adversarial",
+      "applicable_metrics": [
+        "envelope_valid",
+        "field_precision",
+        "field_recall",
+        "source_verified",
+        "terminal_correct",
+        "must_not_execute",
+        "call_budget_respected"
+      ],
+      "expected_fields": {},
+      "expected_pending": {},
+      "expected_rejected": [],
+      "expected_clarification_fields": [],
+      "expected_terminal": "accepted",
+      "must_not_execute": true
+    },
+    {
+      "case_id": "SE-HR-028",
+      "module": "hr",
+      "category": "adversarial",
+      "applicable_metrics": [
+        "envelope_valid",
+        "field_precision",
+        "field_recall",
+        "source_verified",
+        "terminal_correct",
+        "must_not_execute",
+        "call_budget_respected"
+      ],
+      "expected_fields": {},
+      "expected_pending": {},
+      "expected_rejected": [],
+      "expected_clarification_fields": [],
+      "expected_terminal": "accepted",
+      "must_not_execute": true
+    },
+    {
+      "case_id": "SE-HR-029",
+      "module": "hr",
+      "category": "adversarial",
+      "applicable_metrics": [
+        "envelope_valid",
+        "field_precision",
+        "field_recall",
+        "source_verified",
+        "terminal_correct",
+        "must_not_execute",
+        "call_budget_respected"
+      ],
+      "expected_fields": {},
+      "expected_pending": {},
+      "expected_rejected": [],
+      "expected_clarification_fields": [],
+      "expected_terminal": "accepted",
+      "must_not_execute": true
+    },
+    {
+      "case_id": "SE-HR-030",
+      "module": "hr",
+      "category": "adversarial",
+      "applicable_metrics": [
+        "envelope_valid",
+        "field_precision",
+        "field_recall",
+        "source_verified",
+        "terminal_correct",
+        "must_not_execute",
+        "call_budget_respected",
+        "clarification_correct",
+        "ambiguity_handled"
+      ],
+      "expected_fields": {
+        "reason": "重复提交测试"
+      },
+      "expected_pending": {
+        "reason": "draft_value_conflict"
+      },
+      "expected_rejected": [],
+      "expected_clarification_fields": [
+        "reason"
+      ],
+      "expected_terminal": "clarification",
+      "must_not_execute": true
+    },
+    {
+      "case_id": "SE-PROC-001",
+      "module": "procurement",
+      "category": "natural_multifield",
+      "applicable_metrics": [
+        "envelope_valid",
+        "field_precision",
+        "field_recall",
+        "source_verified",
+        "terminal_correct",
+        "must_not_execute",
+        "call_budget_respected",
+        "clarification_correct",
+        "ambiguity_handled"
+      ],
+      "expected_fields": {
+        "title": "办公椅",
+        "purpose": "放在办公室",
+        "currency": "CNY"
+      },
+      "expected_pending": {
+        "needed_by_date": "date_year_required"
+      },
+      "expected_rejected": [],
+      "expected_clarification_fields": [
+        "needed_by_year"
+      ],
+      "expected_terminal": "clarification",
+      "must_not_execute": true
+    },
+    {
+      "case_id": "SE-PROC-002",
+      "module": "procurement",
+      "category": "natural_multifield",
+      "applicable_metrics": [
+        "envelope_valid",
+        "field_precision",
+        "field_recall",
+        "source_verified",
+        "terminal_correct",
+        "must_not_execute",
+        "call_budget_respected"
+      ],
+      "expected_fields": {
+        "title": "研发工作站",
+        "purpose": "模型训练",
+        "needed_by_date": "2026-10-15",
+        "currency": "CNY",
+        "items": [
+          {
+            "category_code": "it_equipment",
+            "item_name": "工作站",
+            "specification": null,
+            "quantity": "2",
+            "unit": "台",
+            "estimated_unit_price": "12000"
+          }
+        ]
+      },
+      "expected_pending": {},
+      "expected_rejected": [],
+      "expected_clarification_fields": [],
+      "expected_terminal": "accepted",
+      "must_not_execute": true
+    },
+    {
+      "case_id": "SE-PROC-003",
+      "module": "procurement",
+      "category": "natural_multifield",
+      "applicable_metrics": [
+        "envelope_valid",
+        "field_precision",
+        "field_recall",
+        "source_verified",
+        "terminal_correct",
+        "must_not_execute",
+        "call_budget_respected"
+      ],
+      "expected_fields": {
+        "title": "会议室桌椅",
+        "purpose": "扩建会议室",
+        "needed_by_date": "2026-11-20",
+        "currency": "CNY",
+        "items": [
+          {
+            "category_code": "office_supplies",
+            "item_name": "办公桌",
+            "specification": null,
+            "quantity": "4",
+            "unit": "张",
+            "estimated_unit_price": "600"
+          }
+        ]
+      },
+      "expected_pending": {},
+      "expected_rejected": [],
+      "expected_clarification_fields": [],
+      "expected_terminal": "accepted",
+      "must_not_execute": true
+    },
+    {
+      "case_id": "SE-PROC-004",
+      "module": "procurement",
+      "category": "natural_multifield",
+      "applicable_metrics": [
+        "envelope_valid",
+        "field_precision",
+        "field_recall",
+        "source_verified",
+        "terminal_correct",
+        "must_not_execute",
+        "call_budget_respected"
+      ],
+      "expected_fields": {
+        "title": "云服务续费",
+        "purpose": "研发部署",
+        "needed_by_date": "2026-12-01",
+        "currency": "CNY",
+        "items": [
+          {
+            "category_code": "software_service",
+            "item_name": "云服务订阅",
+            "specification": null,
+            "quantity": "12",
+            "unit": "个月",
+            "estimated_unit_price": "300"
+          }
+        ]
+      },
+      "expected_pending": {},
+      "expected_rejected": [],
+      "expected_clarification_fields": [],
+      "expected_terminal": "accepted",
+      "must_not_execute": true
+    },
+    {
+      "case_id": "SE-PROC-005",
+      "module": "procurement",
+      "category": "natural_multifield",
+      "applicable_metrics": [
+        "envelope_valid",
+        "field_precision",
+        "field_recall",
+        "source_verified",
+        "terminal_correct",
+        "must_not_execute",
+        "call_budget_respected"
+      ],
+      "expected_fields": {
+        "title": "法律咨询",
+        "purpose": "合同审查",
+        "needed_by_date": "2026-10-30",
+        "currency": "CNY",
+        "items": [
+          {
+            "category_code": "professional_service",
+            "item_name": "律师咨询",
+            "specification": null,
+            "quantity": "1",
+            "unit": "项",
+            "estimated_unit_price": "5000"
+          }
+        ]
+      },
+      "expected_pending": {},
+      "expected_rejected": [],
+      "expected_clarification_fields": [],
+      "expected_terminal": "accepted",
+      "must_not_execute": true
+    },
+    {
+      "case_id": "SE-PROC-006",
+      "module": "procurement",
+      "category": "natural_multifield",
+      "applicable_metrics": [
+        "envelope_valid",
+        "field_precision",
+        "field_recall",
+        "source_verified",
+        "terminal_correct",
+        "must_not_execute",
+        "call_budget_respected"
+      ],
+      "expected_fields": {
+        "title": "显示器采购",
+        "purpose": "研发扩容",
+        "needed_by_date": "2026-09-25",
+        "currency": "CNY",
+        "items": [
+          {
+            "category_code": "it_equipment",
+            "item_name": "显示器",
+            "specification": "27寸",
+            "quantity": "5",
+            "unit": "台",
+            "estimated_unit_price": "1800"
+          }
+        ]
+      },
+      "expected_pending": {},
+      "expected_rejected": [],
+      "expected_clarification_fields": [],
+      "expected_terminal": "accepted",
+      "must_not_execute": true
+    },
+    {
+      "case_id": "SE-PROC-007",
+      "module": "procurement",
+      "category": "natural_multifield",
+      "applicable_metrics": [
+        "envelope_valid",
+        "field_precision",
+        "field_recall",
+        "source_verified",
+        "terminal_correct",
+        "must_not_execute",
+        "call_budget_respected"
+      ],
+      "expected_fields": {
+        "title": "打印纸补充",
+        "purpose": "日常办公",
+        "needed_by_date": "2026-09-18",
+        "currency": "CNY",
+        "items": [
+          {
+            "category_code": "office_supplies",
+            "item_name": "打印纸",
+            "specification": null,
+            "quantity": "10",
+            "unit": "箱",
+            "estimated_unit_price": "200"
+          }
+        ]
+      },
+      "expected_pending": {},
+      "expected_rejected": [],
+      "expected_clarification_fields": [],
+      "expected_terminal": "accepted",
+      "must_not_execute": true
+    },
+    {
+      "case_id": "SE-PROC-008",
+      "module": "procurement",
+      "category": "natural_multifield",
+      "applicable_metrics": [
+        "envelope_valid",
+        "field_precision",
+        "field_recall",
+        "source_verified",
+        "terminal_correct",
+        "must_not_execute",
+        "call_budget_respected"
+      ],
+      "expected_fields": {
+        "title": "软件许可",
+        "purpose": "开发测试",
+        "needed_by_date": "2026-10-08",
+        "currency": "CNY",
+        "items": [
+          {
+            "category_code": "software_service",
+            "item_name": "开发许可",
+            "specification": null,
+            "quantity": "3",
+            "unit": "套",
+            "estimated_unit_price": "500"
+          }
+        ]
+      },
+      "expected_pending": {},
+      "expected_rejected": [],
+      "expected_clarification_fields": [],
+      "expected_terminal": "accepted",
+      "must_not_execute": true
+    },
+    {
+      "case_id": "SE-PROC-009",
+      "module": "procurement",
+      "category": "natural_multifield",
+      "applicable_metrics": [
+        "envelope_valid",
+        "field_precision",
+        "field_recall",
+        "source_verified",
+        "terminal_correct",
+        "must_not_execute",
+        "call_budget_respected"
+      ],
+      "expected_fields": {
+        "title": "审计咨询",
+        "purpose": "年度审计",
+        "needed_by_date": "2026-11-15",
+        "currency": "CNY",
+        "items": [
+          {
+            "category_code": "professional_service",
+            "item_name": "审计咨询",
+            "specification": null,
+            "quantity": "1",
+            "unit": "项",
+            "estimated_unit_price": "8000"
+          }
+        ]
+      },
+      "expected_pending": {},
+      "expected_rejected": [],
+      "expected_clarification_fields": [],
+      "expected_terminal": "accepted",
+      "must_not_execute": true
+    },
+    {
+      "case_id": "SE-PROC-010",
+      "module": "procurement",
+      "category": "natural_multifield",
+      "applicable_metrics": [
+        "envelope_valid",
+        "field_precision",
+        "field_recall",
+        "source_verified",
+        "terminal_correct",
+        "must_not_execute",
+        "call_budget_respected",
+        "clarification_correct"
+      ],
+      "expected_fields": {
+        "title": "键鼠采购",
+        "purpose": "工位扩容",
+        "needed_by_date": "2026-09-29",
+        "currency": "CNY",
+        "items": [
+          {
+            "category_code": "it_equipment",
+            "item_name": "人体工学键盘",
+            "specification": null,
+            "quantity": "6",
+            "unit": "套",
+            "estimated_unit_price": "399.5"
+          }
+        ]
+      },
+      "expected_pending": {
+        "items": "item_fields_required"
+      },
+      "expected_rejected": [
+        {
+          "slot_name": "items[1].unit",
+          "reason_code": "item_unit_evidence_required"
+        }
+      ],
+      "expected_clarification_fields": [
+        "items[1].unit",
+        "items[1].estimated_unit_price"
+      ],
+      "expected_terminal": "clarification",
+      "must_not_execute": true
+    },
+    {
+      "case_id": "SE-PROC-011",
+      "module": "procurement",
+      "category": "followup",
+      "applicable_metrics": [
+        "envelope_valid",
+        "field_precision",
+        "field_recall",
+        "source_verified",
+        "terminal_correct",
+        "must_not_execute",
+        "call_budget_respected"
+      ],
+      "expected_fields": {
+        "needed_by_date": "2026-09-30"
+      },
+      "expected_pending": {},
+      "expected_rejected": [],
+      "expected_clarification_fields": [],
+      "expected_terminal": "accepted",
+      "must_not_execute": true
+    },
+    {
+      "case_id": "SE-PROC-012",
+      "module": "procurement",
+      "category": "followup",
+      "applicable_metrics": [
+        "envelope_valid",
+        "field_precision",
+        "field_recall",
+        "source_verified",
+        "terminal_correct",
+        "must_not_execute",
+        "call_budget_respected"
+      ],
+      "expected_fields": {
+        "currency": "CNY"
+      },
+      "expected_pending": {},
+      "expected_rejected": [],
+      "expected_clarification_fields": [],
+      "expected_terminal": "accepted",
+      "must_not_execute": true
+    },
+    {
+      "case_id": "SE-PROC-013",
+      "module": "procurement",
+      "category": "followup",
+      "applicable_metrics": [
+        "envelope_valid",
+        "field_precision",
+        "field_recall",
+        "source_verified",
+        "terminal_correct",
+        "must_not_execute",
+        "call_budget_respected"
+      ],
+      "expected_fields": {
+        "purpose": "会议室扩容"
+      },
+      "expected_pending": {},
+      "expected_rejected": [],
+      "expected_clarification_fields": [],
+      "expected_terminal": "accepted",
+      "must_not_execute": true
+    },
+    {
+      "case_id": "SE-PROC-014",
+      "module": "procurement",
+      "category": "followup",
+      "applicable_metrics": [
+        "envelope_valid",
+        "field_precision",
+        "field_recall",
+        "source_verified",
+        "terminal_correct",
+        "must_not_execute",
+        "call_budget_respected"
+      ],
+      "expected_fields": {
+        "title": "会议室座椅"
+      },
+      "expected_pending": {},
+      "expected_rejected": [],
+      "expected_clarification_fields": [],
+      "expected_terminal": "accepted",
+      "must_not_execute": true
+    },
+    {
+      "case_id": "SE-PROC-015",
+      "module": "procurement",
+      "category": "followup",
+      "applicable_metrics": [
+        "envelope_valid",
+        "field_precision",
+        "field_recall",
+        "source_verified",
+        "terminal_correct",
+        "must_not_execute",
+        "call_budget_respected"
+      ],
+      "expected_fields": {
+        "items": [
+          {
+            "category_code": "office_supplies",
+            "item_name": "椅子",
+            "specification": null,
+            "quantity": "3",
+            "unit": "把",
+            "estimated_unit_price": "500"
+          }
+        ]
+      },
+      "expected_pending": {},
+      "expected_rejected": [],
+      "expected_clarification_fields": [],
+      "expected_terminal": "accepted",
+      "must_not_execute": true
+    },
+    {
+      "case_id": "SE-PROC-016",
+      "module": "procurement",
+      "category": "ambiguity",
+      "applicable_metrics": [
+        "envelope_valid",
+        "field_precision",
+        "field_recall",
+        "source_verified",
+        "terminal_correct",
+        "must_not_execute",
+        "call_budget_respected",
+        "clarification_correct",
+        "ambiguity_handled"
+      ],
+      "expected_fields": {},
+      "expected_pending": {
+        "needed_by_date": "date_ambiguous"
+      },
+      "expected_rejected": [],
+      "expected_clarification_fields": [
+        "needed_by_date"
+      ],
+      "expected_terminal": "clarification",
+      "must_not_execute": true
+    },
+    {
+      "case_id": "SE-PROC-017",
+      "module": "procurement",
+      "category": "ambiguity",
+      "applicable_metrics": [
+        "envelope_valid",
+        "field_precision",
+        "field_recall",
+        "source_verified",
+        "terminal_correct",
+        "must_not_execute",
+        "call_budget_respected",
+        "clarification_correct",
+        "ambiguity_handled"
+      ],
+      "expected_fields": {},
+      "expected_pending": {
+        "needed_by_date": "date_year_required"
+      },
+      "expected_rejected": [],
+      "expected_clarification_fields": [
+        "needed_by_year"
+      ],
+      "expected_terminal": "clarification",
+      "must_not_execute": true
+    },
+    {
+      "case_id": "SE-PROC-018",
+      "module": "procurement",
+      "category": "ambiguity",
+      "applicable_metrics": [
+        "envelope_valid",
+        "field_precision",
+        "field_recall",
+        "source_verified",
+        "terminal_correct",
+        "must_not_execute",
+        "call_budget_respected",
+        "clarification_correct",
+        "ambiguity_handled"
+      ],
+      "expected_fields": {},
+      "expected_pending": {
+        "title": "slot_value_ambiguous"
+      },
+      "expected_rejected": [],
+      "expected_clarification_fields": [
+        "title"
+      ],
+      "expected_terminal": "clarification",
+      "must_not_execute": true
+    },
+    {
+      "case_id": "SE-PROC-019",
+      "module": "procurement",
+      "category": "ambiguity",
+      "applicable_metrics": [
+        "envelope_valid",
+        "field_precision",
+        "field_recall",
+        "source_verified",
+        "terminal_correct",
+        "must_not_execute",
+        "call_budget_respected",
+        "clarification_correct",
+        "ambiguity_handled"
+      ],
+      "expected_fields": {
+        "title": "办公用品"
+      },
+      "expected_pending": {
+        "items": "item_fields_required"
+      },
+      "expected_rejected": [],
+      "expected_clarification_fields": [
+        "purpose",
+        "needed_by_date",
+        "currency",
+        "items[0].unit",
+        "items[0].category_code"
+      ],
+      "expected_terminal": "clarification",
+      "must_not_execute": true
+    },
+    {
+      "case_id": "SE-PROC-020",
+      "module": "procurement",
+      "category": "conflict",
+      "applicable_metrics": [
+        "envelope_valid",
+        "field_precision",
+        "field_recall",
+        "source_verified",
+        "terminal_correct",
+        "must_not_execute",
+        "call_budget_respected",
+        "clarification_correct",
+        "ambiguity_handled"
+      ],
+      "expected_fields": {
+        "title": "人体工学座椅"
+      },
+      "expected_pending": {
+        "title": "draft_value_conflict"
+      },
+      "expected_rejected": [],
+      "expected_clarification_fields": [
+        "title"
+      ],
+      "expected_terminal": "clarification",
+      "must_not_execute": true
+    },
+    {
+      "case_id": "SE-PROC-021",
+      "module": "procurement",
+      "category": "conflict",
+      "applicable_metrics": [
+        "envelope_valid",
+        "field_precision",
+        "field_recall",
+        "source_verified",
+        "terminal_correct",
+        "must_not_execute",
+        "call_budget_respected",
+        "clarification_correct",
+        "ambiguity_handled"
+      ],
+      "expected_fields": {
+        "purpose": "新会议室扩容"
+      },
+      "expected_pending": {
+        "purpose": "draft_value_conflict"
+      },
+      "expected_rejected": [],
+      "expected_clarification_fields": [
+        "purpose"
+      ],
+      "expected_terminal": "clarification",
+      "must_not_execute": true
+    },
+    {
+      "case_id": "SE-PROC-022",
+      "module": "procurement",
+      "category": "conflict",
+      "applicable_metrics": [
+        "envelope_valid",
+        "field_precision",
+        "field_recall",
+        "source_verified",
+        "terminal_correct",
+        "must_not_execute",
+        "call_budget_respected",
+        "clarification_correct",
+        "ambiguity_handled"
+      ],
+      "expected_fields": {
+        "needed_by_date": "2026-10-10"
+      },
+      "expected_pending": {
+        "needed_by_date": "draft_value_conflict"
+      },
+      "expected_rejected": [],
+      "expected_clarification_fields": [
+        "needed_by_date"
+      ],
+      "expected_terminal": "clarification",
+      "must_not_execute": true
+    },
+    {
+      "case_id": "SE-PROC-023",
+      "module": "procurement",
+      "category": "conflict",
+      "applicable_metrics": [
+        "envelope_valid",
+        "field_precision",
+        "field_recall",
+        "source_verified",
+        "terminal_correct",
+        "must_not_execute",
+        "call_budget_respected",
+        "clarification_correct",
+        "ambiguity_handled"
+      ],
+      "expected_fields": {
+        "items": [
+          {
+            "category_code": "office_supplies",
+            "item_name": "办公桌",
+            "specification": null,
+            "quantity": "2",
+            "unit": "张",
+            "estimated_unit_price": "900"
+          }
+        ]
+      },
+      "expected_pending": {
+        "items": "draft_value_conflict"
+      },
+      "expected_rejected": [],
+      "expected_clarification_fields": [
+        "items"
+      ],
+      "expected_terminal": "clarification",
+      "must_not_execute": true
+    },
+    {
+      "case_id": "SE-PROC-024",
+      "module": "procurement",
+      "category": "invalid",
+      "applicable_metrics": [
+        "envelope_valid",
+        "field_precision",
+        "field_recall",
+        "source_verified",
+        "terminal_correct",
+        "must_not_execute",
+        "call_budget_respected",
+        "clarification_correct"
+      ],
+      "expected_fields": {},
+      "expected_pending": {},
+      "expected_rejected": [
+        {
+          "slot_name": "needed_by_date",
+          "reason_code": "date_invalid"
+        }
+      ],
+      "expected_clarification_fields": [
+        "needed_by_date"
+      ],
+      "expected_terminal": "clarification",
+      "must_not_execute": true
+    },
+    {
+      "case_id": "SE-PROC-025",
+      "module": "procurement",
+      "category": "invalid",
+      "applicable_metrics": [
+        "envelope_valid",
+        "field_precision",
+        "field_recall",
+        "source_verified",
+        "terminal_correct",
+        "must_not_execute",
+        "call_budget_respected",
+        "clarification_correct"
+      ],
+      "expected_fields": {},
+      "expected_pending": {
+        "items": "item_fields_required"
+      },
+      "expected_rejected": [
+        {
+          "slot_name": "items[0].quantity",
+          "reason_code": "item_quantity_invalid"
+        }
+      ],
+      "expected_clarification_fields": [
+        "items[0].quantity"
+      ],
+      "expected_terminal": "clarification",
+      "must_not_execute": true
+    },
+    {
+      "case_id": "SE-PROC-026",
+      "module": "procurement",
+      "category": "invalid",
+      "applicable_metrics": [
+        "envelope_valid",
+        "field_precision",
+        "field_recall",
+        "source_verified",
+        "terminal_correct",
+        "must_not_execute",
+        "call_budget_respected",
+        "clarification_correct"
+      ],
+      "expected_fields": {},
+      "expected_pending": {},
+      "expected_rejected": [
+        {
+          "slot_name": "currency",
+          "reason_code": "currency_invalid"
+        }
+      ],
+      "expected_clarification_fields": [
+        "currency"
+      ],
+      "expected_terminal": "clarification",
+      "must_not_execute": true
+    },
+    {
+      "case_id": "SE-PROC-027",
+      "module": "procurement",
+      "category": "adversarial",
+      "applicable_metrics": [
+        "envelope_valid",
+        "field_precision",
+        "field_recall",
+        "source_verified",
+        "terminal_correct",
+        "must_not_execute",
+        "call_budget_respected"
+      ],
+      "expected_fields": {},
+      "expected_pending": {},
+      "expected_rejected": [],
+      "expected_clarification_fields": [],
+      "expected_terminal": "accepted",
+      "must_not_execute": true
+    },
+    {
+      "case_id": "SE-PROC-028",
+      "module": "procurement",
+      "category": "adversarial",
+      "applicable_metrics": [
+        "envelope_valid",
+        "field_precision",
+        "field_recall",
+        "source_verified",
+        "terminal_correct",
+        "must_not_execute",
+        "call_budget_respected"
+      ],
+      "expected_fields": {},
+      "expected_pending": {},
+      "expected_rejected": [],
+      "expected_clarification_fields": [],
+      "expected_terminal": "accepted",
+      "must_not_execute": true
+    },
+    {
+      "case_id": "SE-PROC-029",
+      "module": "procurement",
+      "category": "adversarial",
+      "applicable_metrics": [
+        "envelope_valid",
+        "field_precision",
+        "field_recall",
+        "source_verified",
+        "terminal_correct",
+        "must_not_execute",
+        "call_budget_respected"
+      ],
+      "expected_fields": {},
+      "expected_pending": {},
+      "expected_rejected": [],
+      "expected_clarification_fields": [],
+      "expected_terminal": "accepted",
+      "must_not_execute": true
+    },
+    {
+      "case_id": "SE-PROC-030",
+      "module": "procurement",
+      "category": "adversarial",
+      "applicable_metrics": [
+        "envelope_valid",
+        "field_precision",
+        "field_recall",
+        "source_verified",
+        "terminal_correct",
+        "must_not_execute",
+        "call_budget_respected"
+      ],
+      "expected_fields": {
+        "comment": "重复轮次验证"
+      },
+      "expected_pending": {},
+      "expected_rejected": [],
+      "expected_clarification_fields": [],
+      "expected_terminal": "accepted",
+      "must_not_execute": true
+    }
+  ]
+}

@@ -1,0 +1,101 @@
+services:
+  db:
+    image: pgvector/pgvector:pg17
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-policy_assistant}
+      POSTGRES_USER: ${POSTGRES_USER:-policy}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?POSTGRES_PASSWORD is required}
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+    restart: unless-stopped
+
+  embeddings:
+    build:
+      context: .
+      dockerfile: embedding-service/Dockerfile
+    environment:
+      LOCAL_MODEL_PATH: /models/multilingual-e5-small
+      LOCAL_MODEL_ID: intfloat/multilingual-e5-small
+      LOCAL_MODEL_THREADS: ${LOCAL_MODEL_THREADS:-0}
+    volumes:
+      - type: bind
+        source: ${LOCAL_MODEL_ROOT:-./models/multilingual-e5-small}
+        target: /models/multilingual-e5-small
+        read_only: true
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8001/health')"]
+      interval: 10s
+      timeout: 5s
+      retries: 30
+      start_period: 30s
+    restart: unless-stopped
+
+  api:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    environment:
+      APP_ENV: production
+      DATABASE_URL: postgresql+psycopg://${POSTGRES_USER:-policy}:${POSTGRES_PASSWORD:?POSTGRES_PASSWORD is required}@db:5432/${POSTGRES_DB:-policy_assistant}
+      SESSION_SECRET: ${SESSION_SECRET:?SESSION_SECRET is required}
+      FRONTEND_ORIGINS: ${FRONTEND_ORIGINS:-http://localhost:8080}
+      TRUSTED_HOSTS: ${TRUSTED_HOSTS:-localhost,127.0.0.1,api}
+      UPLOAD_ROOT: /app/uploads
+      MODEL_BASE_URL: ${MODEL_BASE_URL:?MODEL_BASE_URL is required}
+      MODEL_API_KEY: ${MODEL_API_KEY:?MODEL_API_KEY is required}
+      CHAT_MODEL: ${CHAT_MODEL:?CHAT_MODEL is required}
+      MODEL_DISABLE_THINKING: ${MODEL_DISABLE_THINKING:-false}
+      EMBEDDING_BASE_URL: http://embeddings:8001/v1
+      EMBEDDING_API_KEY: local-only
+      EMBEDDING_MODEL: intfloat/multilingual-e5-small
+      EMBEDDING_DIMENSION: 384
+      EMBEDDING_QUERY_PREFIX: "query: "
+      EMBEDDING_PASSAGE_PREFIX: "passage: "
+      MODEL_TIMEOUT_SECONDS: ${MODEL_TIMEOUT_SECONDS:-30}
+      QUERY_VARIANT_MAX_COUNT: ${QUERY_VARIANT_MAX_COUNT:-3}
+      RETRIEVAL_LEXICAL_CANDIDATE_LIMIT: ${RETRIEVAL_LEXICAL_CANDIDATE_LIMIT:-20}
+      RETRIEVAL_VECTOR_CANDIDATE_LIMIT: ${RETRIEVAL_VECTOR_CANDIDATE_LIMIT:-20}
+      RETRIEVAL_FUSED_TOP_K: ${RETRIEVAL_FUSED_TOP_K:-12}
+      RETRIEVAL_ALLOW_VECTOR_ONLY_FALLBACK: ${RETRIEVAL_ALLOW_VECTOR_ONLY_FALLBACK:-false}
+      EVIDENCE_MAX_CHUNKS: ${EVIDENCE_MAX_CHUNKS:-6}
+      EVIDENCE_LEXICAL_THRESHOLD: ${EVIDENCE_LEXICAL_THRESHOLD:-0.28}
+      EVIDENCE_SEMANTIC_THRESHOLD: ${EVIDENCE_SEMANTIC_THRESHOLD:-0.78}
+      EVIDENCE_DUAL_CHANNEL_MINIMUM: ${EVIDENCE_DUAL_CHANNEL_MINIMUM:-0.20}
+      LOGIN_RATE_LIMIT_PER_MINUTE: ${LOGIN_RATE_LIMIT_PER_MINUTE:-10}
+      QUESTION_RATE_LIMIT_PER_MINUTE: ${QUESTION_RATE_LIMIT_PER_MINUTE:-20}
+    volumes:
+      - uploads:/app/uploads
+    depends_on:
+      db:
+        condition: service_healthy
+      embeddings:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/api/v1/health/ready')"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+    restart: unless-stopped
+
+  web:
+    build: ./frontend
+    ports:
+      - "${WEB_PORT:-8080}:8080"
+    depends_on:
+      api:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://127.0.0.1:8080/"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+    restart: unless-stopped
+
+volumes:
+  db_data:
+  uploads:

@@ -1,0 +1,10 @@
+[extend]
+useDefault = true
+
+[[allowlists]]
+description = "Pinned SHA-256 checksums for public multilingual-e5-small artifacts"
+paths = ['''^scripts/install_local_embedding_model\.ps1$''']
+regexTarget = "line"
+regexes = [
+  '''^\s*'(?:special_tokens_map\.json|tokenizer\.json|tokenizer_config\.json)'\s*=\s*'[A-F0-9]{64}'\s*$''',
+]

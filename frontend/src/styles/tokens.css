@@ -1,0 +1,10 @@
+:root {
+  --paper: #f4f2ec;
+  --ink: #171714;
+  --graphite: #5e5d57;
+  --line: #cbc8be;
+  --trust: #2f684f;
+  --error: #8c332d;
+  --serif: "Noto Serif SC Variable", Georgia, serif;
+  --mono: "IBM Plex Mono", "Courier New", monospace;
+}
